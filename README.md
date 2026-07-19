@@ -32,11 +32,11 @@ Processing	Python, Pandas, VADER
 Visualization	Power BI
 Version Control	GitHub
 📂 Project Structure
-data/        → raw & processed datasets  
-sql/         → table creation + analytics queries  
-python/      → NLP sentiment pipeline  
-powerbi/     → interactive dashboard  
-screenshots/ → dashboard visuals  
+
+- `social_media_posts_20000.csv` - sample source dataset for MySQL or Power BI
+- `Real- Time Social Media Sentiment.pbix` - Power BI dashboard
+- `Screenshot *.png` - dashboard previews
+- `xquik_to_social_media_posts.py` - optional Xquik export converter
 
 📈 Key Features
 
@@ -54,19 +54,27 @@ GROUP BY p.platform, s.sentiment;
 
 📸 Dashboard Preview
 
-(Add screenshot here)
+![Real-Time Social Media Sentiment Analytics dashboard](Screenshot%202026-02-21%20183354.png)
 
 🚀 How to Run
 
-Import CSV into MySQL
+Import `social_media_posts_20000.csv` into MySQL
 
-Run SQL table scripts
+Run the sentiment scoring or SQL analysis you want to compare
 
-Execute Python sentiment pipeline
+Connect Power BI to MySQL or the converted CSV
 
-Connect Power BI to MySQL
+Load `Real- Time Social Media Sentiment.pbix`
 
-Load dashboard
+Optional Xquik import:
+
+```bash
+python xquik_to_social_media_posts.py xquik-export.json social_media_posts_xquik.csv
+```
+
+The converter accepts Xquik CSV, JSON, JSONL, or NDJSON tweet exports and writes
+the same `post_id,platform,username,post_text,post_time,likes,shares,followers`
+columns used by the dashboard source data.
 
 📌 Skills Demonstrated
 
@@ -89,3 +97,5 @@ Topic modeling
 Automated refresh
 
 Brand-specific monitoring
+
+Xquik is an independent third-party service. Not affiliated with X Corp. "Twitter" and "X" are trademarks of X Corp.
